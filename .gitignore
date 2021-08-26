@@ -1,0 +1,4 @@
+/ajax/**
+/auto/**
+**/.DS_Store
+.idea/**

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Flight table</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css"> -->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/main.css?ver=1.1">
+<!--===============================================================================================-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ3N58NGWK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SJ3N58NGWK');
+</script>
+</head>
+<body>
+	<div class="container-background"></div>
+	<div class="container-table100 bgImage">
+		<div class="wrap-table100">
+			<div class="table100 head z-index-100">
+				<div class="topHead table padding-0_1em flex0_1_auto padding-bottom-top z-index-100">
+							<div class="body d-flex flex-align-items-center justify-content-space-between">
+								<div id="time" ><span>10:20</span></div>
+								<div colspan="2" class="d-flex flex-align-items-center justify-content-space-between" style="text-align: right; padding: 0;">
+									<img src="images/icons/Logo.png" ></img>
+									<span>MONDIAL</span>
+								</div>
+							</div>
+				</div>
+				<div class="table100 thead padding-0_1em flex0_1_auto z-index-100">
+								<div id="timeTopHead" ><span>10:20</span></div>
+								<div class="topHeadMondial" ><span>MONDIAL2020</span></div>
+								<div class="th topHead">
+									<div class="fontSize0_8em">Flight Table</div>
+								</div>
+								<div class="th" id="dateInfo">
+									<div class="d-flex flex-direction-column fontSize0_8em"><span class="dateTitle"></span></div>
+								</div>
+				</div>
+				<div class="errorinfo none d-flex justify-content-center padding-0_2em bgColor-red flex0_1_auto z-index-100">
+					<div>Server connection error</div>
+				</div>
+				<div class="infoMessage d-flex justify-content-center padding-0_2em bgColor-yellow flex0_1_auto z-index-100">
+					<div id="infoMessage"></div>
+				</div>
+				<div class="table100 loadsTab flex1_1_auto z-index-100">
+					<div id="flightSheduleTab" class="table100percent">
+					</div>	
+				</div>
+				<div class="table100 loadsPeo flex0_1_auto height100vh z-index-100 none">
+					<div id="peopleSheduleTab" class="d-flex flex-flow-row-wrap">
+					
+					</div>
+				</div>
+				<div class="loading d-flex justify-content-space-between justify-content-center flex-align-items-center z-index-1" id="loading"></div>
+			</div>
+		</div>
+	</div>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+<!--===============================================================================================-->
+	<!-- <script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
+
+	<script>
+		$(document).ready(function () {
+			ajaxLoads();
+			loadMessage();
+			setInterval(function() {ajaxLoads(); loadMessage();}, 15000);
+			// getWeather();
+		});
+	</script>
+
+	<script type="text/javascript" src="js/ajaxLoads.js?ver=1.3"></script>
+
+</body>
+</html>
