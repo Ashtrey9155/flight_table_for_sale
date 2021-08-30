@@ -56,7 +56,7 @@ function ajaxLoads()
         $("#timeTopHead span").html(getDate("time"));
       },
     	success: function(data) {
-        $('.errorinfo').addClass("none");
+        // $('.errorinfo').addClass("none");
     		// var tab = $("#flightSheduleTab");
     		$("#loading").fadeOut("slow");
     		if (data["loads"].length == 0)
@@ -99,7 +99,7 @@ function ajaxLoads()
     		}       	
     	},
     	error: function() {
-        $('.errorinfo').removeClass("none");
+        // $('.errorinfo').removeClass("none");
         // $('.errorinfo').toggleClass('error');
         var html = getTableCellItem("error");
         $("#flightSheduleTab").html(html);
@@ -115,7 +115,8 @@ function ajaxLoads()
 
 function ajaxPeople(boardNumber) {
   // let today = new Date();
-  let formatDate = getDate();
+  // let formatDate = getDate();
+  let formatDate = "2021-08-21";
   let xhr = $.ajax({
       url: 'ajax/getPeople_'+formatDate+'_'+boardNumber+'.json?rnd='+Math.random().toString().substr(2, 8),
       type: 'GET',
@@ -129,7 +130,7 @@ function ajaxPeople(boardNumber) {
         $("#loading").fadeIn("slow");
       },
     	success: function(data) {
-        $('.errorinfo').addClass("none");
+        // $('.errorinfo').addClass("none");
         $("#loading").fadeOut("slow");
     		if (data["people"].length == 0)
     		{
@@ -159,15 +160,15 @@ function ajaxPeople(boardNumber) {
             }	
             htmlRight += "</tbody></table>";
             if (countPeoples < 11) {
-              $("#peopleSheduleTab").html(`<div class="d-flex width100 justify-content-center flex-grow-1"><font>Takeoff number ${boardNumber}</font></div><div class="flex-grow-1">${htmlLeft}</div>`);
+              $("#peopleSheduleTab").html(`<div class="d-flex width100 justify-content-center flex-grow-1 bgColor-mondialgreen"><font>Takeoff number ${boardNumber}</font></div><div class="flex-grow-1">${htmlLeft}</div>`);
             } else {
-              $("#peopleSheduleTab").html(`<div class="d-flex width100 justify-content-center flex-grow-1"><font>Takeoff number ${boardNumber}</font></div><div class="flex-grow-1">${htmlLeft}</div><div class="flex-grow-1">${htmlRight}</div>`);
+              $("#peopleSheduleTab").html(`<div class="d-flex width100 justify-content-center flex-grow-1 bgColor-mondialgreen"><font>Takeoff number ${boardNumber}</font></div><div class="flex-grow-1">${htmlLeft}</div><div class="flex-grow-1">${htmlRight}</div>`);
             }
         }       	 
     	},
     	error: function() {
         // $('.errorinfo').toggleClass('error');
-        $('.errorinfo').removeClass("none");
+        // $('.errorinfo').removeClass("none");
         html = getTableCellItem("error");
         xhr = null;  
         changeTab();

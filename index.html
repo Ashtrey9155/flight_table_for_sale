@@ -32,14 +32,14 @@
 							<div class="body d-flex flex-align-items-center justify-content-space-between">
 								<div id="time" ><span>10:20</span></div>
 								<div colspan="2" class="d-flex flex-align-items-center justify-content-space-between" style="text-align: right; padding: 0;">
-									<img src="images/icons/Logo.png" ></img>
-									<span>MONDIAL</span>
+									<img src="images/icons/skytable_w.png" ></img>
+									<span>LOGO NAME</span>
 								</div>
 							</div>
 				</div>
 				<div class="table100 thead padding-0_1em flex0_1_auto z-index-100">
 								<div id="timeTopHead" ><span>10:20</span></div>
-								<div class="topHeadMondial" ><span>MONDIAL2020</span></div>
+								<div class="topHeadMondial" ><span>LOGO NAME</span></div>
 								<div class="th topHead">
 									<div class="fontSize0_8em">Flight Table</div>
 								</div>
@@ -47,11 +47,13 @@
 									<div class="d-flex flex-direction-column fontSize0_8em"><span class="dateTitle"></span></div>
 								</div>
 				</div>
-				<div class="errorinfo none d-flex justify-content-center padding-0_2em bgColor-red flex0_1_auto z-index-100">
-					<div>Server connection error</div>
+				<div class="errorinfo d-flex justify-content-center padding-0_2em bgColor-red flex0_1_auto z-index-100">
+					<div></div>
 				</div>
 				<div class="infoMessage d-flex justify-content-center padding-0_2em bgColor-yellow flex0_1_auto z-index-100">
-					<div id="infoMessage"></div>
+					<div id="infoMessage">
+						<span>Мондиаль 2020 завершен. Онлайн-табло взлетов может быть установлено на вашем сайте. Для установки свяжитесь с разработчиками</span>
+					</div>
 				</div>
 				<div class="table100 loadsTab flex1_1_auto z-index-100">
 					<div id="flightSheduleTab" class="table100percent">
@@ -77,7 +79,22 @@
 		$(document).ready(function () {
 			ajaxLoads();
 			loadMessage();
-			setInterval(function() {ajaxLoads(); loadMessage();}, 15000);
+			let demoTimeLeft = 30000;
+			let idTimer = setInterval(function() {ajaxLoads(); loadMessage();}, 15000);
+			let idDemoTimer = setInterval(function(){
+				demoTimeLeft = demoTimeLeft - 1000;
+				$(".errorinfo").html("DEMO: " + demoTimeLeft/1000 + " sec.");
+				if (demoTimeLeft === 0) {
+					stopDemo();
+				}
+			}, 1000);
+			function stopDemo(){
+				clearInterval(idTimer);
+				clearInterval(idDemoTimer);
+				$(".loadsTab").html("");
+				$(".loadsPeo").html("");
+				$(".errorinfo").html("DEMO: 0 sec.");
+			};
 			// getWeather();
 		});
 	</script>
