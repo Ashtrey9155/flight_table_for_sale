@@ -718,3 +718,7 @@ th, td {
 .infoMessage div {
   text-align: center;
 }
+
+.blur {
+  filter: blur(3px);
+}

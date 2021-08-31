@@ -1,0 +1,36 @@
+{
+  "loads": [
+  {
+  "number": 3,
+  "plane": "Л-410",
+  "freePlaces": "1",
+  "maxPlaces": 20,
+  "date": "",
+  "timeLeft": 0
+  },
+  {
+  "number": 4,
+  "plane": "Ан-2",
+  "freePlaces": "16",
+  "maxPlaces": 20,
+  "date": "",
+  "timeLeft": 0
+  },
+  {
+  "number": 1,
+  "plane": "Ан-28",
+  "freePlaces": "0",
+  "maxPlaces": 20,
+  "date": "2021-08-21",
+  "timeLeft": ""
+  },
+  {
+  "number": 2,
+  "plane": "PAC 750",
+  "freePlaces": "1",
+  "maxPlaces": 16,
+  "date": "2021-08-21",
+  "timeLeft": "59"
+  }
+  ]
+  }
